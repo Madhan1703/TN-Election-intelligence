@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0087)file:///C:/Users/SPECTRE%20%20X360%20%20-14/Downloads/tn_election_2026_dashboard_3.html -->
+<!-- saved from url=(0087)file:///C:/Users/SPECTRE%20%20X360%20%20-14/Downloads/tn_election_2026_dashboard_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,6 +74,7 @@ body{background:var(--off);color:var(--text);font-family:var(--font);font-size:1
 /* LAYOUT */
 .wrap{max-width:1280px;margin:0 auto;padding:20px 24px}
 .panel{display:none}.panel.active{display:block}
+/* Charts init fix: briefly make all panels block during load, then hide non-active */
 .sh{margin-bottom:18px}
 .sh h2{font-size:15px;font-weight:700;color:var(--navy);letter-spacing:-.01em}
 .sh p{font-size:11px;color:var(--g300);margin-top:2px;font-family:var(--mono)}
@@ -253,7 +254,7 @@ footer strong{color:#64748b}
     <div class="card">
       <div class="ch"><div class="ct">Turnout % &amp; Absolute Votes — 4 Elections</div><span class="cbadge bc">CONFIRMED</span></div>
       <div class="leg"><span><i class="sq" style="background:#0050d8;opacity:.3"></i>Turnout % (left)</span><span><i class="sq" style="background:#10b981"></i>Votes cast crore (right)</span></div>
-      <div class="cw h260"><canvas id="c_combo" width="1278" height="585" style="display: block; box-sizing: border-box; height: 260px; width: 568px;"></canvas></div>
+      <div class="cw h260"><canvas id="c_combo" width="853" height="390" style="display: block; box-sizing: border-box; height: 260px; width: 568px;"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Intra-day Turnout Curve — April 23 2026</div><span class="cbadge bc">ECI ECINET</span></div>
@@ -270,12 +271,12 @@ footer strong{color:#64748b}
     <div class="card">
       <div class="ch"><div class="ct">SIR Paradox — Smaller Roll, More Absolute Votes</div><span class="cbadge bp">ANALYSIS</span></div>
       <div class="leg"><span><i class="sq" style="background:#cbd5e1"></i>Registered electors</span><span><i class="sq" style="background:#0050d8"></i>Votes cast</span></div>
-      <div class="cw h210"><canvas id="c_sir" width="1278" height="472" style="display: block; box-sizing: border-box; height: 210px; width: 568px;"></canvas></div>
+      <div class="cw h210"><canvas id="c_sir" width="853" height="315" style="display: block; box-sizing: border-box; height: 210px; width: 568px;"></canvas></div>
       <div class="nb2 nw mt8">SIR deleted <strong>97.37L</strong> names, added <strong>27.53L</strong> — roll shrank 10.45%. Yet votes cast rose by ~22L. Chennai alone swung <strong>59.06% → 83.60%</strong> (+24.5pp).</div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Average Turnout by Region</div><span class="cbadge bc">ECI DATA</span></div>
-      <div class="cw h260"><canvas id="c_region" width="1278" height="585" style="display: block; box-sizing: border-box; height: 260px; width: 568px;"></canvas></div>
+      <div class="cw h260"><canvas id="c_region" width="853" height="390" style="display: block; box-sizing: border-box; height: 260px; width: 568px;"></canvas></div>
     </div>
   </div>
 </div>
@@ -301,19 +302,19 @@ footer strong{color:#64748b}
   <div class="row c2">
     <div class="card">
       <div class="ch"><div class="ct">Turnout % — All 4 Elections</div><span class="cbadge bc">CONFIRMED</span></div>
-      <div class="cw h260"><canvas id="c_h_pct" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h260"><canvas id="c_h_pct" height="390" style="display: block; box-sizing: border-box; height: 260px; width: 568px;" width="853"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Electorate vs Votes Cast (crore)</div><span class="cbadge bc">ECI OFFICIAL</span></div>
       <div class="leg"><span><i class="sq" style="background:#cbd5e1"></i>Registered electors</span><span><i class="sq" style="background:#0050d8"></i>Votes cast</span></div>
-      <div class="cw h260"><canvas id="c_h_abs" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h260"><canvas id="c_h_abs" height="390" style="display: block; box-sizing: border-box; height: 260px; width: 568px;" width="853"></canvas></div>
     </div>
   </div>
 
   <div class="card">
     <div class="ch"><div class="ct">Male vs Female Turnout Trend — 2011 to 2026</div><span class="cbadge bc">ECI PIB OFFICIAL</span></div>
     <div class="leg"><span><i style="background:#0050d8;height:2px;width:22px"></i>Male</span><span><i style="background:#10b981;height:2px;width:22px"></i>Female</span></div>
-    <div class="cw h240"><canvas id="c_h_gender" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+    <div class="cw h240"><canvas id="c_h_gender" height="360" style="display: block; box-sizing: border-box; height: 240px; width: 1190px;" width="1786"></canvas></div>
     <div class="nb2 nc mt8">Female turnout exceeded male in 2011 (+0.98pp), 2016 (+0.18pp), narrowly lost in 2021 (−0.27pp), then surged ahead by <strong>+2.19pp in 2026</strong> — the widest female lead in state history.</div>
   </div>
 </div>
@@ -332,16 +333,16 @@ footer strong{color:#64748b}
   <div class="row c3">
     <div class="card">
       <div class="ch"><div class="ct">Turnout % by Gender — 2026</div><span class="cbadge bc">ECI PIB</span></div>
-      <div class="cw h220"><canvas id="c_g_bar26" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h220"><canvas id="c_g_bar26" height="271" style="display: block; box-sizing: border-box; height: 180px; width: 361px;" width="541"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Elector Composition 2026</div><span class="cbadge bc">CEO TN</span></div>
       <div class="leg"><span><i class="dot" style="background:#10b981"></i>Female 51.1%</span><span><i class="dot" style="background:#0050d8"></i>Male 48.9%</span><span><i class="dot" style="background:#7c3aed"></i>3G 0.013%</span></div>
-      <div class="cw h220"><canvas id="c_g_pie" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h220"><canvas id="c_g_pie" height="271" style="display: block; box-sizing: border-box; height: 180px; width: 361px;" width="541"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Gender Gap (Female − Male %)</div><span class="cbadge be">DERIVED</span></div>
-      <div class="cw h220"><canvas id="c_g_gap" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h220"><canvas id="c_g_gap" height="271" style="display: block; box-sizing: border-box; height: 180px; width: 361px;" width="541"></canvas></div>
     </div>
   </div>
 
@@ -349,11 +350,11 @@ footer strong{color:#64748b}
     <div class="card">
       <div class="ch"><div class="ct">Gender Turnout Trend — 2011–2026</div><span class="cbadge bc">ECI PIB</span></div>
       <div class="leg"><span><i style="background:#0050d8;height:2px;width:20px"></i>Male</span><span><i style="background:#10b981;height:2px;width:20px"></i>Female</span></div>
-      <div class="cw h230"><canvas id="c_g_trend" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h230"><canvas id="c_g_trend" height="426" style="display: block; box-sizing: border-box; height: 284px; width: 568px;" width="853"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Estimated Votes Cast by Gender (2026)</div><span class="cbadge be">DERIVED EST.</span></div>
-      <div class="cw h180"><canvas id="c_g_abs" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h180"><canvas id="c_g_abs" height="270" style="display: block; box-sizing: border-box; height: 180px; width: 568px;" width="853"></canvas></div>
       <div class="nb2 nw mt8"><strong>Derived — not official.</strong> Applied ECI % to confirmed rolls: Male 2,80,30,658 × 83.57% ≈ <strong>2,34,25,253</strong> · Female 2,93,04,905 × 85.76% ≈ <strong>2,51,27,887</strong> · 3G 7,728 × 60.49% ≈ <strong>4,675</strong>. Official data pending ECI Form 20 post May 4.</div>
     </div>
   </div>
@@ -405,11 +406,11 @@ footer strong{color:#64748b}
   <div class="row c2">
     <div class="card">
       <div class="ch"><div class="ct">Regional Average Turnout</div><span class="cbadge bc">ECI DATA</span></div>
-      <div class="cw h260"><canvas id="c_dist_reg" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h260"><canvas id="c_dist_reg" height="390" style="display: block; box-sizing: border-box; height: 260px; width: 568px;" width="853"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Top 10 vs Bottom 10 Districts</div><span class="cbadge bp">PROVISIONAL</span></div>
-      <div class="cw h260"><canvas id="c_dist_topbot" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h260"><canvas id="c_dist_topbot" height="390" style="display: block; box-sizing: border-box; height: 260px; width: 568px;" width="853"></canvas></div>
     </div>
   </div>
 </div>
@@ -428,11 +429,11 @@ footer strong{color:#64748b}
   <div class="row c2">
     <div class="card">
       <div class="ch"><div class="ct">Cumulative Turnout Curve</div><span class="cbadge bc">ECI ECINET</span></div>
-      <div class="cw h280"><canvas id="c_intra_area" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h280"><canvas id="c_intra_area" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 568px;" width="853"></canvas></div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Marginal % Gained Per Period</div><span class="cbadge be">DERIVED</span></div>
-      <div class="cw h280"><canvas id="c_intra_delta" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h280"><canvas id="c_intra_delta" height="420" style="display: block; box-sizing: border-box; height: 280px; width: 568px;" width="853"></canvas></div>
       <div class="nb2 mt8">The <strong>9–11 AM window added 21.87pp in 2 hours</strong> — fastest surge of the day. Voters rushed early to beat peak heat. The 5 PM figure (82.24%) already exceeded the entire 2021 final turnout (73.63%).</div>
     </div>
   </div>
@@ -479,13 +480,13 @@ footer strong{color:#64748b}
   <div class="row c2">
     <div class="card">
       <div class="ch"><div class="ct">Third-gender Elector Registration Growth</div><span class="cbadge bc">CEO TN</span></div>
-      <div class="cw h180"><canvas id="c_tg" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h180"><canvas id="c_tg" height="270" style="display: block; box-sizing: border-box; height: 180px; width: 568px;" width="853"></canvas></div>
       <div class="nb2 mt8"><strong>2026 third-gender turnout: 60.49%</strong> — well below male (83.57%) and female (85.76%) despite 5.5× registration growth since 2011. Access and social barriers persist.</div>
     </div>
     <div class="card">
       <div class="ch"><div class="ct">Turnout by Gender vs 2021</div><span class="cbadge bc">ECI PIB</span></div>
       <div class="leg"><span><i class="sq" style="background:#cbd5e1"></i>2021</span><span><i class="sq" style="background:#0050d8"></i>2026</span></div>
-      <div class="cw h200"><canvas id="c_gen_comp" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="cw h200"><canvas id="c_gen_comp" height="426" style="display: block; box-sizing: border-box; height: 284px; width: 568px;" width="853"></canvas></div>
     </div>
   </div>
 </div>
@@ -666,6 +667,12 @@ function showPanel(id, btn) {
   document.querySelectorAll('.nb').forEach(function(b){b.classList.remove('active');});
   document.getElementById(id).classList.add('active');
   if (btn) btn.classList.add('active');
+  // Re-trigger resize for all Chart.js instances so hidden-panel charts render correctly
+  setTimeout(function() {
+    Chart.instances.forEach(function(chart) {
+      chart.resize();
+    });
+  }, 50);
 }
 
 // ─── INTRA-DAY VISUAL ────────────────────────────────────────────────────────
@@ -1151,6 +1158,15 @@ new Chart(document.getElementById('c_gen_comp'), {
   }
 });
 
+// ─── FORCE RESIZE ALL CHARTS AFTER FULL LOAD ────────────────────────────────
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    Chart.instances.forEach(function(chart) {
+      chart.resize();
+    });
+  }, 100);
+});
+
 // ─── NOTES ───────────────────────────────────────────────────────────────────
 (function() {
   var rows = [
@@ -1177,6 +1193,32 @@ new Chart(document.getElementById('c_gen_comp'), {
   }
   document.getElementById('confirmed_kv').innerHTML = html;
 })();
+// ─── HIDDEN PANEL CHART FIX ──────────────────────────────────────────────────
+// Chart.js cannot measure canvas in display:none panels.
+// Solution: flash all panels to visible for one frame at startup so charts render,
+// then immediately re-hide the inactive ones.
+(function() {
+  // Make all panels temporarily visible
+  var panels = document.querySelectorAll('.panel');
+  var style = document.createElement('style');
+  style.id = 'panel-flash';
+  style.textContent = '.panel { display: block !important; }';
+  document.head.appendChild(style);
+
+  // After charts have had one frame to measure and render, restore visibility
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      // Remove the flash override
+      var el = document.getElementById('panel-flash');
+      if (el) el.parentNode.removeChild(el);
+      // Resize all charts so they fill their containers correctly
+      if (window.Chart && Chart.instances) {
+        Chart.instances.forEach(function(c) { try { c.resize(); } catch(e){} });
+      }
+    });
+  });
+})();
+
 </script>
 
 
